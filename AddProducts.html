@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    
+    <title>Adding Products | Supplier</title>
+    <style>
+        *
+        {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        #main{
+            width: 100%;
+            border: 1px solid black;
+            display: flex;
+            position: absolute;
+            margin: 0%;
+
+        }
+          #product-form{
+              border: 1px solid red;
+              width: 50%;
+              height: 770px;
+
+          }
+          
+         #heading {
+            width: 100%;
+            text-align: center;
+            color : #EC407A;
+            font-family: sans-serif;
+            margin-bottom: 5%;
+          }
+          #Myform
+          { 
+              background-color:#F8BBD0;
+              width:95% ;
+              border-radius: 15px;
+              padding: 10px;
+              margin: auto;
+              border: 1px solid black;
+          }
+          #productimg,#productprice,#productcode,#productname,#productcategory{
+              width: 60%;
+              height: 30px;
+              font-size: 20px;
+              border-radius: 5px;
+              margin-bottom: 10px;
+          }
+          #add-Product{
+              background-color: #EC407A;
+              height: 30px;
+              border: 2px solid white;
+              border-radius: 5px;  
+            }
+            #side-img{
+                display: inline-block;
+                width: 50%;
+                background-color: #EC407A;
+                height: 770px;
+                text-align: center;
+            }
+            #meesho{
+                margin-top: 45%;
+                font-family: 'Righteous', cursive;
+                font-size: 50px;
+                color: white;
+                position: relative;
+            }
+            a{
+                text-decoration: none;
+                color: white;
+            }
+          
+    </style>
+
+</head>
+<body>
+    <div id="main">
+    <div id="product-form">
+        <h1 id="heading">Catalogue Adding Page</h1>
+        <form  id="Myform" action="">
+            <input type="text" id="productimg" placeholder="Enter Image URL" required /><br>
+            <input type="text" id="productprice" placeholder="Enter Product Price" required/><br>
+            <input type="text" id="productcode" placeholder="Enter Product Code" required/><br>
+            <input type="text" id="productname" placeholder="Enter Product Name" required/><br>
+            <input type="text" id="productcategory" placeholder="Enter category of a product" required/><br>
+            <button id="add-Product" onclick="addProduct()">Add Product</button>
+        </form>
+
+    </div>
+    <div id="side-img">
+        <h1 id="meesho"> <a href="messho_login.html"> Meesho</a></h1>
+    </div> 
+    </div>
+    
+    
+</body>
+</html>
+<script>
+    
+    if(localStorage.getItem("Products")==null)
+           {
+               localStorage.setItem("Products",JSON.stringify([]));
+           }
+    function addProduct()
+    {
+       // e.preventDefault();
+        let myForm = document.getElementById("Myform");
+        
+        let prodImg = myForm.productimg.value;
+       // console.log("prodImg :",prodImg)
+        let prodPrice = myForm.productprice.value;
+       // console.log("prodPrice :",prodPrice)
+        let prodCode = myForm.productcode.value;
+        //console.log("prodCode:",prodCode)
+        let prodName = myForm.productname.value;
+        //console.log("prodName:",prodName)
+        let prodCat = myForm.productcategory.value;
+
+        
+
+        let productData ={
+                Product_Img :prodImg,
+                Product_Price : prodPrice,
+                Product_Code : prodCode,
+                Product_Name : prodName,
+                Product_Cat : prodCat
+            };
+            
+           console.log("ProductData : -",productData);
+
+            if(productData!=null){
+                swal("Congratulations!", "Your Product has Added!", "success");
+            }
+            let arr = JSON.parse(localStorage.getItem("Products"));
+
+            arr.push(productData);
+
+            
+
+
+            localStorage.setItem("Products",JSON.stringify(arr));
+
+
+    
+    }
+</script>

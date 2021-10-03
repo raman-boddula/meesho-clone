@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="icon" href="https://static.meeshosupply.com/web/meesho-logo-fav.png">
+    <title>Cart's Page | Meesho</title>
+</head>
+<style>
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    .main {
+        display: grid;
+        grid-template-columns: 60% 40%;
+
+    }
+    #addedProducts
+    {
+        width: 100%;
+        box-shadow: 1px 1px 2px 0px gray;
+        display:grid;
+        grid-template-columns: 23% 23% 23% 23%;
+        grid-gap: 2%;
+        margin-top: 10%;
+        font-size: larger;
+        line-height: 0%;
+        padding: 1.5%;
+        line-height: normal;
+    }
+    img
+    {
+        width: 100%;
+    }
+    .rembtn
+    {
+        background-color: black;
+        color: white;
+        padding: 1%;
+    }
+    .rembtn:hover
+    {
+        background-color: red;
+    }
+    .navbar{
+        display: grid;
+        grid-template-columns: 10% 10% 60% 20%;
+        box-shadow: 1px 1px 2px 0px gray;
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        background-color: white;
+    }
+    .navbar > div{
+        margin: auto;
+        
+    }
+    #need{
+        padding-top: 0.8%;
+    }
+    .bill {
+        width: 100%;
+        margin-top: 15%;
+        padding: 15%;
+        background-color: #FCE4EC;
+        
+        
+    }#sum {
+        margin-top: 5%;
+        width: 60%;
+        box-shadow: 1px 1px 3px 0px black;
+        height: 50px;
+        margin-bottom: 5%;
+        font-size: larger;
+    }
+    #checkout {
+        padding: 2%;
+        font-size: 16px;
+        background-color: #F06292;
+        border: none;
+        box-shadow: 1px 1px 2px 0px gray;
+        border-radius: 15px;
+    } 
+    .bill > button:hover
+    {
+        background-color:#fae104;
+        box-shadow: 1px 1px 1px 0px gray;
+        color: black;
+    }
+    #coupon{
+        width: 40%;
+        margin-bottom: 5%;
+        font-size: larger;
+        padding: 1%;
+        box-shadow: 1px 1px 1px 0px gray;
+    }
+    #applypromo{
+        padding: 1%;
+        background-color: #F48FB1;
+        margin: auto;
+        border: none;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+</style>
+<body>
+    <div class="navbar">
+        <div><img src="https://cdn.hevodata.com/customer/logo/8c76f62bd88177a78bb6e2810a244446.png" alt=""></div>
+        <div></div>
+        <div id="need"><img  src="cart-img.png" alt=""></div>
+        <div></div>
+    </div>
+<div class="main">
+    <div id="addedProducts">
+
+    </div>
+    <div class="bill">
+        <div><h1><u>Price Details :</u> </h1></div>
+        <span>Total Bill :</span> <input type="text" id="sum" /> <br>
+        <input type="text" id="coupon"/> <button id="applypromo" onclick="applyPromo(event)">Apply Promo</button> <br>
+
+        <button id="checkout"><a href="Address.html">Proceed to Checkout</a></button>
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+let  parent = document.getElementById('addedProducts');
+
+let cart=JSON.parse(localStorage.getItem("cart"));
+console.log("cart:",cart);
+
+var count=0;
+var sum =0;
+function showProducts()
+{
+cart.forEach(function(product)
+{
+sum+=Number(product.Product_Price);
+
+console.log(product.Product_Img);
+//count++;
+let div =document.createElement('div');
+div.setAttribute("class","prod")
+
+let img = document.createElement('img');
+
+img.src =product.Product_Img;
+
+let product_price =document.createElement("h6");
+
+product_price.textContent=product.Product_Price;
+
+let product_name =document.createElement("h6");
+
+product_name.textContent = product.Product_Name;
+
+let removeIt = document.createElement("button");
+removeIt.setAttribute("class","rembtn");
+removeIt.innerText ="Remove Item";
+/*removeIt.onclick = function ()
+{
+    localStorage.removeItem("cart",product);
+}*/
+
+div.append(img,product_name,product_price,removeIt);
+parent.append(div);
+});
+}
+showProducts();
+
+document.getElementById("sum").value=sum;
+
+var flag =true;
+function applyPromo(e){
+    e.preventDefault();
+
+    let coupon = document.getElementById("coupon").value;
+
+    if((coupon=="FLAT30") && flag==true)
+    {
+        sum=sum*0.7;
+        swal("Congratulations!","Coupon Applied","success");
+        document.getElementById("sum").value=Math.floor(sum);
+        flag=false;
+    }else if(coupon=="NEW200" && flag==true)
+    {
+        sum=sum-200;
+        flag=false;
+    }else
+    {
+        swal("!Oops","Invalid Coupon","error");
+    }
+}
+
+</script>
