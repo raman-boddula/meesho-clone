@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://static.meeshosupply.com/web/meesho-logo-fav.png">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Address | Meesho</title>
+    <style>
+        
+    .navbar{
+        display: grid;
+        grid-template-columns: 10% 10% 60% 20%;
+        box-shadow: 1px 1px 2px 0px gray;
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        background-color: white;
+    }
+    .navbar > div{
+        margin: auto;
+        
+    }
+    #need{
+        padding-top: 0.8%;
+    }
+    .address{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        margin-top: 5%;
+        box-shadow: 1px 1px 2px 0px gray;
+        width: 50%;
+        background-color: #FFEBEE;
+    }
+    #logo{
+        font-size: 20px;
+    }
+    #name,#pincode,#city,#state{
+        width: 30%;
+        padding: 1%;
+    }
+    #phone,#house,#road,#nearby{
+        width: 50%;
+        padding: 1%;
+    }
+    #comb{
+        display: flex;
+    }
+    #savebtn{
+        width: 50%;
+        margin: auto;
+        padding: 1%;
+        border: none;
+        background-color: #E91E63;
+        margin-bottom: 0.2%;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <div><img src="https://cdn.hevodata.com/customer/logo/8c76f62bd88177a78bb6e2810a244446.png" width="100%" alt=""></div>
+        <div></div>
+        <div id="need"><img  src="cart-2-img.png" alt=""></div>
+        <div></div>
+    </div>
+
+    <div class="address" >
+        <h5 id="logo"> <i class="fa fa-phone" aria-hidden="true"></i> Contact Details</h5>
+        <input type="text" id="name" placeholder="Name" required /><br>
+        <input type="text" name="" id="phone" placeholder="Phone Number" required /><br>
+        <h4> <i class="fa fa-map-marker" aria-hidden="true"> </i>&nbsp; Address </h4>
+        <input type="text" name="" id="house" placeholder="House No/Building Name" required /><br>
+        <input type="text" id="road" placeholder="Road Name / Area / Colony" required /><br>
+        <input type="text" id="pincode" placeholder="Pincode" required /><br>
+        <div id="comb"><input type="text" name="" id="city" placeholder="City" required>&nbsp; <input type="text" placeholder="State" id="state" required ><br></div>
+        <br>
+        <input type="text" id="nearby" placeholder="Nearby Location (Optional)"/><br>
+        <button onclick="saveAndSubmit(event)" id="savebtn">Save Address & Continue</button>
+    </div>
+    
+</body>
+</html>
+<script>
+    function saveAndSubmit(e){
+        if(document.getElementById("name").value != null ||document.getElementById("phone").value != null ||document.getElementById("house").value != null||document.getElementById("city").value != null)
+        
+        {
+            window.location.href="payments.html";
+        }
+    }
+</script>

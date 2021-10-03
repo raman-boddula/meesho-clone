@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://static.meeshosupply.com/web/meesho-logo-fav.png">
+    <title>Homepage | Meesho</title>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+        .main{
+            width: 100%;
+            border: 2px solid #CFD8DC;
+            position: fixed;
+            top: 1px;
+            background-color: white;
+
+        }
+        .forsake{
+            width: 100%;
+            border: 1px solid #CFD8DC;
+            
+            
+        }
+        #colorchange > span{
+            color:black;
+            background-color:none;
+            margin: auto;
+        }
+        #search-bar
+        {
+            width: 150%;
+            border: none;
+            padding-bottom: 10px;
+            margin: auto 5px auto 5px;
+            font-size: 20px;
+        }
+        #combi > span{
+            color: black;
+
+        }
+        #combi{
+            width: 100%;
+            border-radius: 1%;
+            align-items: center;
+            margin-right: 5%;
+            padding: 1%;
+            border: 2px solid gray;
+        }
+        .dash-2{
+            margin: auto;
+            font-weight: 100;
+            font-size: 40px;
+            margin:2%;
+            color: gray;
+        }
+        #down {
+            display: flex;
+            width: 30%;
+        }
+       /* #req{
+            margin: auto;
+            padding: 1%;
+        }*/
+        #down > span{
+            color: black;
+            margin: auto;
+        }
+        #suppl{
+            width: 30%;
+            margin: auto;
+        
+        }
+        #colorchange {         
+            display: flex; 
+            align-items: center;
+            margin: auto 0.9%;
+            
+        }
+        .navbar{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            align-items: center;
+            
+
+        }
+        .navbartwo{
+            width: 90%;
+            margin: auto ;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:rgb(255,255,255);
+            padding: 1.3%;
+            
+            border-left: none;
+            border-right: none;
+            
+        }
+        .navbartwo :hover 
+        {
+            font-weight: bold;
+            
+            color : #f43397;
+            
+        }
+        .submenuone {
+            display: none;
+        }
+        .navbartwo :hover .submenuone  {
+            display: grid;
+            grid-template-columns: 15% 15% 15% 15% 15% 15%;
+            grid-gap: 1%;
+            position: absolute;
+            background-color: white;
+            padding: 2%;
+            margin-top: 1.5%;/* controlling the hover of dropdown menu*/
+            color:gray;
+            width: 100%;
+            height: 400px;
+            box-shadow: 0.3px 0.3px 1px 0px gray ;
+        }
+        .menuone{
+            display: flex;
+            flex-direction: column;
+            font-weight: normal;
+            line-height: 50px;
+        }
+        .submenutwo {
+            display: none;
+        }
+        .navbartwo :hover .submenutwo {
+            display: grid;
+            grid-template-columns: 15% 15% 15% 15% 15% 15% ;
+            grid-gap: 1%;
+            padding: 2%;
+            position:absolute;
+            background-color: white;
+            margin-top: 1.5%;
+            width: 87%;
+            height: 400px;
+            box-shadow: 1px 1px 2px 0px gray;
+        }
+        .submenuthree ,.submenufour,.submenufive,.submenusix,.submenuseven,.submenueight{
+            display: none;
+        }
+        .navbartwo :hover .submenuthree {
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20%  ;
+            grid-gap: 1%;
+            padding: 2%;
+            position:absolute;
+            background-color: white;
+            margin-top: 1.5%;
+            width: 73%;
+            height: 400px;
+            box-shadow: 1px 1px 2px 0px gray;
+        }
+        .navbartwo :hover .submenufour{
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%  ;
+            grid-gap: 1%;
+            padding: 2%;
+            position:absolute;
+            background-color: white;
+            margin-top: 1.5%;
+            width: 58%;
+            height: 400px;
+            box-shadow: 1px 1px 2px 0px gray;
+        }
+        .navbartwo :hover .submenufive {
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            grid-gap: 1%;
+            padding: 2%;
+            position:absolute;
+            background-color: white;
+            margin-top: 1.5%;
+            width: 45%;
+            height: 400px;
+            box-shadow: 1px 1px 2px 0px gray;
+        }
+        .navbartwo :hover .submenusix{
+            display: grid;
+            grid-template-columns: 24% 24% 24% 24%;
+            grid-gap: 1%;
+            padding: 1%;
+            background-color: white;
+            position: absolute;
+            margin-top: 1.5%;
+            width: 40%;
+            height: 400px;
+            box-shadow: 1px 1px 2px 0px gray;
+        }
+        .navbartwo :hover .submenuseven{
+            display: grid;
+            grid-template-columns: 30% 30% 30% ;
+            padding: 1%;
+            background-color: white;
+            position: absolute;
+            margin-top: 1.5%;
+            width: 31%;
+            grid-gap: 2%;
+            height: 400px;
+            box-shadow: 1px 1px 2px 0px gray;
+        }
+        .navbartwo :hover .submenueight{
+            display: grid;
+            grid-template-columns: 85%;
+
+            padding: 1%;
+            background-color: white;
+            position: absolute;
+            margin-top: 1.5%;
+            width: 10%;
+            height: 400px;
+            box-shadow: 1px 1px 2px 0px gray;
+        }
+
+
+
+        .first-box{
+            width: 73%;
+            margin : auto;
+            margin-top: 15%;
+            display: flex;
+            border-radius: 1%;
+        }
+        .text{
+            width: 50%;
+            background-color: #FAFAFA;
+            padding: 5%;
+            text-align: left;
+            font-size: large;
+        }
+        .image{
+            width: 50%;
+            justify-content: right;
+        }
+        .image > img
+        {
+            width: 100%;
+            height: 100%;
+            border-radius: 1%;
+        }
+        #para
+        {   
+            display: inline-block;
+            font-size: x-large;
+            background-color: white;
+            border-radius: 2%;
+            padding: 10px;
+            margin-top: 10%;
+            
+        }
+        .pink-box
+        {   display: block;
+            background-color: #f43397;
+            color: white;
+            border-radius: 5px;
+            margin: 5% 5% 5% 0px;
+            width: 80%;
+            padding: 10px;
+            text-decoration: none;
+            display: flex;
+            text-align: center;
+        }
+        #play
+        {
+            margin:  auto auto auto 25px;
+        }
+        #playstore-logo{
+            margin-left: 5%;
+    }
+        #cat-heading
+        {
+            width: 73%;
+            margin:  5% auto auto auto ;
+            display: grid;
+            grid-template-columns: 23% 54% 23%;
+            padding: 1%;
+            position: sticky;
+        }
+        hr
+        {
+            
+            margin-top: 5%;
+            background-color: #f43397;
+            color: #f43397;
+        }
+        #cat{
+            margin-top:-15px;
+            text-align: center;
+        }
+        .banner
+        {
+            display: flex;
+            width: 73%;
+            background-image: url(https://images.meesho.com/images/marketing/1631612018143.png);
+            border: 1px solid black;
+            margin: 5% auto;
+            height: 600px;
+            
+        }
+        .threeimg
+        {
+            width: 100%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 35% 25% 25%;
+            grid-gap: 5%;
+        }
+        .firstimg
+        {
+            width: 70%;
+            margin: 5%;
+        }
+        .secondimg,.thirdimg
+        {
+            margin: auto 10px 7% 10px ;
+            margin-right: 5%;
+        }
+        .homecare
+        {
+            width: 73%;
+            display: grid;
+            grid-template-columns: 30% 20% 18% 18%;
+            grid-gap: 4%;
+            margin: 5% auto;
+            border :1px solid black;
+            background-image: url(https://images.meesho.com/images/marketing/1629883965347.png);
+            height: 545px;
+        }
+        #homeobtn
+        {
+            text-align: center;
+            margin: auto;
+        }
+        #viewall
+        {   
+            margin-top: 15px;
+            background-color: green;
+            padding: 6% 8% 6% 8%;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            border-radius: 5%;
+        }
+        .imageone
+        {
+            margin: auto;
+            
+        }
+        .imageone > img
+        {
+            border: 8px solid #CDEDDE;
+        }
+        .imageone > a
+        {
+            margin-left: 27%;
+        }
+        #btn1
+        {
+            padding: 8px  20px 8px 20px;
+            margin: auto;
+            text-align: center;
+            font-size: 15px;
+            background-color: white;
+            color: green;
+            border: none;
+            border-radius: 5px;
+        }
+        .become
+        {
+            display: flex;
+            width: 73%;
+            margin: auto;
+            border: 1px solid black;
+            background-image: url(https://meesho.com/_next/static/images/download_banner-19ca4d63d9c1dc44bc8cbfae62b60bd7.jpg);
+            height: 560px;
+        
+        }
+        .split
+        {
+            width: 30%;
+        }
+        .split-1
+        {
+            width: 70%;
+        }
+        #firsthead
+        {
+            width:100%;
+            text-align: right;
+            padding:  2% 8% 2% 8%;
+            color: #5585F8;
+        }
+        #secondhead
+        {
+            color: #f43397;
+            text-align: right;
+            padding: 2% 8% 2% 8%;
+            font-size: 48px;
+        }
+        .logos 
+        {
+            width: 100%;
+            margin: auto;
+            justify-content: right;
+            display: grid;
+            grid-template-columns: 55% 20% 20% 0.5%;
+            grid-gap: 4%;
+            padding: 5%;
+        }
+        #android
+        {
+            border: 10px solid black;
+            border-radius: 5%;
+        
+
+        }
+        
+        #apple
+        {
+            border: 11px solid black;
+            border-radius: 5%;
+            margin-right: 10px;
+        }
+        .final
+        {
+            width: 73%;
+            border: 1px solid black;
+            background-image: url(https://meesho.com/_next/static/images/supply_banner_desk-d53b6ffa3ee3c43feedcfdd0f3d9bd8d.jpg);
+            height: 290px;
+            margin: 5% auto;
+        }
+        .textreg
+        {
+            color: white;
+            padding: 3% 2% 1% 5%;
+            line-height: -1%;
+        }
+        #sell
+        {
+            margin-top: 1%;
+            font-size: 17px;
+        }
+        .threeboxes
+        {
+            display: grid;
+            width: 65%;
+            grid-template-columns: 30% 2% 30% 2% 30%;
+            grid-gap:1%;
+            color: white;
+            padding: 1%;
+            font-size: 18px;
+            margin-left: 4%;
+
+        }
+        .material-icons
+        {
+            color: green;
+            margin: auto;
+        }
+        .threeboxes > h6
+        {
+            
+            display: flex;
+            margin: auto;
+            text-align: center;
+
+        }
+        .threeboxes> span
+        {
+            margin: auto;
+            text-align: center;
+        }
+        .dash
+        {
+            font-size: xx-large;
+        }
+        .signup
+        {
+            margin-left: 5%;
+            padding: 10px 10px 10px 0px;
+        }
+        #signup-btn{
+            padding: 5px 15px 5px 15px;
+            color: #f43397;
+            font-size: 18px;
+            background-color: white;
+            border: none;
+            border-radius: 5%;
+            padding: 10px 15px 10px 15px;
+        }
+        .foot
+        {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 33% 30% 30%;
+            background-color: rgb(249, 249, 249);
+            padding:  4% 8% 2% 8%;
+            grid-gap: 2%;
+        }
+        #paragr
+        {
+            font-size: 20px;
+            justify-content: left;
+            padding: 3% 15% 2% 0%;
+            color: rgb(102, 102, 102);
+        }
+        .appstore{
+            display: grid;
+            grid-template-columns: 40% 40%;
+            grid-gap: 10%;
+            margin-top: 8%;   
+        }
+        .second{
+            display: grid;
+            grid-template-columns: 48% 48%;
+            grid-gap: 2%;
+            color: rgb(102, 102, 102);
+            
+            line-height: 35px;
+            font-size: 20px;
+
+        }
+        .third{
+            
+            display: grid;
+            grid-template-columns: 48% 48%;
+            grid-gap: 2%;
+            color: rgb(102, 102, 102);
+            
+            line-height: 35px;
+            font-size: 20px;
+            padding: 1%;
+
+        }
+        #contact{
+            color: black;
+        }
+        .social {
+            margin-top: 2%;
+            display: grid;
+            grid-template-columns: 19% 19% 19% 19% 19%;
+            text-align: center;
+            grid-gap: 2%;
+        }
+        .facebook {   
+            background: #5183ee;   
+            color: white;  
+            border-radius: 50%;
+            margin-top: 15%;
+            }         
+        .twitter {   
+        color: white;   
+        background: #00acee;   
+        border-radius: 50%;
+        margin-top: 15%;
+        }   
+        .linkedin {   
+        background: #0e76a8;   
+        color: white;   
+        border-radius: 50%;
+        margin-top: 15%;
+        } 
+        .instagram {   
+        background: #df1e58;   
+        color: white; 
+        border-radius: 50%;
+        margin-top: 15%;  
+        }         
+        .youtube {     
+            color: red; 
+            margin-top: 15%;
+        }
+        .finaltext{
+            width: 220%;
+            margin-top: 20%;
+            background-color: white;
+            font-size: 15px;
+            padding: 5%;
+        }
+        .lasttext{
+            width: 300%;
+            padding: 5%;
+            border: 1px solid #CFD8DC;
+            border-radius: 5px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        #req{         
+            font-size: 16px;
+            font-weight: 500; 
+        }
+        #be{
+            font-size: 16px;
+            font-weight: 500;
+        }
+        #and{
+            border: 3px solid black;
+            background-color: black;
+            border-radius: 5px;
+        }
+        #ap{
+            border: 5px solid black;
+            background-color: black;
+            border-radius: 5px;
+        }
+        #mobilelogo{
+            font-size: 30px;
+        }
+        #req{
+        
+            vertical-align: middle;
+        }
+        .signup > h5 {
+            color: #f43397;
+        }
+    </style>
+</head>
+<body> 
+    <div class="main">
+    <div class="forsake">
+            
+        <div class="navbar">
+            <div class="main-logo">
+               <a href="homepage.html"> <span><img src="https://cdn.hevodata.com/customer/logo/8c76f62bd88177a78bb6e2810a244446.png" alt="" rel = "icon" width="70%"></span></a>
+            </div>
+            <div id="combi">
+               <span class="material-icons">search <input type="text" name="" id="search-bar" placeholder="Try Saree,Kurthi or Seach by Product Code"></span>
+            </div>
+            <div id="down">
+                <span id="mobilelogo" class="material-icons">
+                    phone_iphone</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.meesho.supply">
+                <span id="req">Download App</span></a>
+            </div>
+            <div class="dash-2">
+            <span>|</span>
+            </div>
+            <div id="suppl">
+                <span id="be"> <a href="messho_signup.html">
+                    Become a Supplier</a></span>
+            </div>
+            <div class="dash-2">
+                <span>|</span>
+            </div>
+            <div id="colorchange">
+                <span id="newone" class="material-icons new-class">
+                    person
+                    </span>
+                <span>Profile</span>
+            </div>
+            <div id="colorchange">
+                <span  class="material-icons new-class">
+                    shopping_cart
+                    </span>
+                    <span>Cart</span>
+            </div>
+        </div>
+        </div>
+    <div class="navbartwo">
+        <div class="WE">
+            <span>Women Ethnic</span>
+            <div class="submenuone">
+                <div class="menuone">  
+                   <a href="#">All Women Ethnic</a>
+                    <a href="products.html">View all</a>
+                </div>
+                <div class="menuone">
+                    <a href="#">Sarees</a>
+                    <a href="#">All Sarees</a>
+                    <a href="#">Silk Sarees</a>
+                    <a href="#">Cotton Sarees</a>
+                    <a href="#">Cotton Silk Sarees</a>
+                    <a href="#">Georgette Sarees</a>
+                    <a href="#">Embroidered Sarees</a>
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">Kurthis</a>
+                    <a href="#">All Kurthis</a>
+                    <a href="#">Anarkali Kurthis</a>
+                    <a href="#">Rayon Kurthis</a>
+                    <a href="#">Cotton Kurthis</a>
+                    <a href="#">Embroidered Kurthis</a>
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">Suits & Dress Materail</a>
+                    <a href="#">All Suits & Dress Materials</a>
+                    <a href="#">Cotton Suits</a>
+                    <a href="#">Embroidered Suits</a>
+                    <a href="#">Chanderi Suits</a>
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">Other Ethnic</a>
+                    <a href="#">Blouses</a>
+                    <a href="#">Dupattas</a>
+                    <a href="#">Lehengas</a>
+                    <a href="#">Gown</a>
+                    <a href="#">Ethnic Bottomwear</a>
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">Kurtha Sets</a>
+                    <a href="#">All Kurtha Sets</a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="WW">
+            <span>Women Western </span>
+            <div class="submenutwo">
+                <div class="menuone">  
+                   <a href="#">Topwear</a>
+                    <a href="#"> Dresses</a>
+                    <a href="#">Tops</a>
+                    <a href="#">Sweaters</a>
+                    <a href="#">Jumpsuits</a>
+                </div>
+                <div class="menuone">
+                    <a href="#">Bottomwear</a>
+                    <a href="#">Jeans</a>
+                    <a href="#">Jeggings</a>
+                    <a href="#">Palazzos</a>
+                    <a href="#">Shorts</a>
+                    <a href="#">Skirts</a>
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">Innerwear</a>
+                    <a href="#">Bra</a>
+                    <a href="#">Briefs</a>
+                    
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">Sleepwear</a>
+                    <a href="#">Nightsuits</a>
+                    <a href="#">Babydools</a>
+                </div>
+            </div>
+        </div>
+        <div class="JA">
+            <span>Jewellery & Accessories</span>
+            <div class="submenuthree">
+                <div class="menuone">  
+                   <a href="#">Jewellery</a>
+                    <a href="#">Jewellery Set</a>
+                    <a href="#">Manfalsutras</a>
+                    <a href="#">Earrings</a>
+                    <a href="#">Studs</a>
+                    <a href="#">Bangles</a>
+                    <a href="#">Necklace</a>
+                </div>
+                <div class="menuone">
+                    <a href="#">Women Accessories</a>
+                    <a href="#">Bags</a>
+                    <a href="#">Watches</a>
+                    <a href="#">Hair Accessories</a>
+                    <a href="#">Sunglasses</a>
+                    <a href="#">Socks</a>
+                </div>
+            </div>
+        </div>
+        <div class="Men">
+            <span>Men</span>
+            <div class="submenufour">
+                <div class="menuone">  
+                   <a href="#">Top Wear</a>
+                    <a href="#">All Top Wear </a>
+                    <a href="#">Tshirts</a>
+                    <a href="#">Shirts</a>
+                </div>
+                <div class="menuone">
+                    <a href="#">Bottom Wear</a>
+                    <a href="#">Track Pants</a>
+                    <a href="#">Jeans</a>
+                    <a href="#">Trousers</a>
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">Men Accessories</a>
+                    <a href="#">All Men Accessories</a>
+                    <a href="#">Watches</a>
+                    <a href="#">Belts </a>
+                    <a href="#">Wallets</a>
+                    <a href="#">Jewellery</a>
+                    <a href="#">Sunglasses</a>
+                    <a href="#">Bags</a>
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">Men Footwear</a>
+                    <a href="#">Sports Show</a>
+                    <a href="#">Casual Shoes</a>
+                    <a href="#">Formal Shoes</a>
+                    <a href="#">Sandals</a>
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">Inner & Sleep wear</a>
+                    <a href="#">All inner & Sleep wear</a>
+                    <a href="#">Vests</a>
+    
+                </div>
+            </div>
+        </div>
+        <div class="BH">
+            <span>Beauty & Healthy</span>
+            <div class="submenufive">
+                <div class="menuone">  
+                   <a href="#">Make Up </a>
+                    <a href="#">Face</a>
+                    <a href="#">Eyes</a>
+                    <a href="#">Lips</a>
+                    <a href="#">Nails</a>
+                </div>
+                <div class="menuone">
+                    <a href="#">]Wellness</a>
+                    <a href="#">Sanitizer</a>
+                    <a href="#">Oral Care</a>
+                    <a href="#">Feminine Hygiene</a>
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">Skincare</a>
+                    <a href="#">Deodrants</a>
+                </div>
+            </div>
+        </div>
+        <div class="BF">
+            <span>Bags & Footwear</span>
+            <div class="submenusix">
+                <div class="menuone">  
+                   <a href="#">Women Footwear</a>
+                    <a href="#">Flats</a>
+                    <a href="#">Bellies</a>
+                    <a href="#">Juttis</a>
+                </div>
+                <div class="menuone">
+                    <a href="#">Men Footwear</a>
+                    <a href="#">Sports Shoes</a>
+                    <a href="#">Casual Shoes</a>
+                    <a href="#">Formal Shoes</a>
+                    <a href="#">Sandals</a>
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">Womens Bags</a>
+                    <a href="#">All Women Bags</a>
+                    <a href="#">Handbags </a>
+                    <a href="#">Clutches</a>
+                    <a href="#">Slingbags </a>
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">All Men Bags</a>
+                    <a href="#">Men Wallets</a>
+                </div>
+            </div>
+        </div>
+        <div class="HK">
+            <span>Home & Kitchen</span>
+            <div class="submenuseven">
+                <div class="menuone">  
+                   <a href="#">Home Furnishing</a>
+                    <a href="#">BedSheets</a>
+                    <a href="#">Doormats</a>
+                    <a href="#">Curtains</a>
+                    <a href="#">Cushions & Cushion Covers</a>
+                    
+                </div>
+                <div class="menuone">
+                    <a href="#">Home Decors</a>
+                    <a href="#">All Home Decors</a>
+                    <a href="#">Stickers</a>
+                    <a href="#">Clocks </a>
+                    <a href="#">Showpieces</a>
+                </div>
+                <div class="menuone">
+                    
+                    <a href="#">Kitchen & Dining</a>
+                    <a href="#">Kitchen Storage</a>
+                    <a href="#">Cookware & Bakeware</a>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="Kids">
+            <span>Kids</span>
+            <div class="submenuseven">
+                <div class="menuone">  
+                   <a href="#">Toys & Accessories</a>
+                    <a href="#">Soft Toys </a>
+                    <a href="#">Footwear</a>
+                    <a href="#">Stationery</a>
+                    <a href="#">Watches</a>
+                    <a href="#">Bags & Backpacks</a>
+                </div>
+                <div class="menuone">
+                    <a href="#">All Baby Care</a>
+                    <a href="#">Rompers</a>
+                    <a href="#"> Dresses</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="Elec">
+            <span>Electronics</span>
+            <div class="submenueight">
+                <div class="menuone">  
+                   <a href="#">Mobile Accessories</a>
+                    <a href="#">All Mobile Accessories</a>
+                    <a href="#">Smartwatches</a>
+                    <a href="#">Mobile Holders</a>
+                </div>
+               
+            </div>
+        </div>
+    </div>    
+</div>
+    <div class="first-box">
+        <div class="text">
+            <h1>
+            Lowest Prices Best Quality Shopping
+            </h1>
+            <p id="para">50 lakh+ Styles | 650+ categories</p>
+            <a class="pink-box" href="https://play.google.com/store/apps/details?id=com.meesho.supply"><img id="playstore-logo" src="https://cdn-icons-png.flaticon.com/512/300/300218.png"  alt="logo" width="10%"><h5 id="play">Download the Meesho App </h5></a>
+        </div>
+        <div class="image">
+            <img src="https://images.meesho.com/images/marketing/1631722939962.jpg" alt="">
+        </div>
+    </div>
+
+    <div id="cat-heading">
+        <div><hr></div>
+        <div><h1 id="cat">Top Categories to choose from</h1></div>
+        <div><hr></div>
+    </div>
+
+    <div class="banner">
+        <div class="threeimg">
+            <div class="firstimg"><img src="https://images.meesho.com/images/marketing/1631611172021.png" alt=""></div>
+            <div class="secondimg"><img src="https://images.meesho.com/images/marketing/1631610854491.png" alt=""></div>
+            <div class="thirdimg"><img src="https://images.meesho.com/images/marketing/1631611208025.png" alt=""></div>
+        </div>
+    </div>
+
+    <div class="homecare">
+        <div id="homeobtn" ><h1>Homecare</h1>
+            <div>.</div>
+            <a id="viewall" href="#">VIEW ALL</a>
+        </div>
+        <div class="imageone">
+            <img src="https://images.meesho.com/images/marketing/1629883981751.png" alt="" width="100%">
+            <a href="#"><button id="btn1">BedSheets</button></a>
+        </div>
+        <div class="imageone">
+            <img src="https://images.meesho.com/images/marketing/1629884011960.png" width="100%" alt="">
+            <a href="#"><button id="btn1">Kitchenware</button></a>
+        </div>
+        <div class="imageone">
+            <img src="https://images.meesho.com/images/marketing/1629883997863.png" width="90%" alt="">
+            <a href="#"><button id="btn1">Carpets</button></a>
+        </div>
+    </div>
+    <div class="become">
+        <div class="split"> 
+            
+        </div>
+        <div class="split-1">
+        <h1 id="firsthead">Become a reseller and</h1>
+        <h1 id="secondhead">Start your Online Business
+            with Zero Investment</h1>
+        <div class="logos">
+
+            <div>
+                
+            </div>
+            <div><a href="https://play.google.com/store/apps/details?id=com.meesho.supply"><img id="and" src="https://meesho.com/_next/static/images/playstore-a7dfd2afcd42f96d491912cbec2d6fa2.png"width="100%" id="android" alt=""></a></div>
+            <div><a href="https://apps.apple.com/us/app/meesho/id1457958492"><img id="ap" src="https://meesho.com/_next/static/images/appstore-a689c2ac38f3ed1ab7e7b39e98aaf15a.png" id="apple" width ="100%" alt=""></a></div>
+        </div>    
+        </div>
+    </div>
+
+    <div class="final">
+        <div class="textreg">
+            <h1>Register as a Meesho Supplier</h1>
+            
+            <h6 id="sell">Sell your products to crores of customers at 0% commission</h6>
+        </div>
+        <div class="threeboxes">
+            <div>
+                <span class="material-icons">
+                    check_circle
+                    </span><h6>Grow Your Business 10X</h6>
+            </div>
+            <div class="dash">
+                |
+            </div>
+            <div>
+                <span class="material-icons">
+                    check_circle
+                    </span><h6>Enjoy 100% Profit</h6>
+            </div>
+            <div class="dash">
+                |
+            </div>
+            <div>
+                <span class="material-icons">
+                    check_circle
+                    </span><h6 >Sell all over India</h6>
+            </div>
+        </div>
+        <div class="signup">
+            <button id="signup-btn"><h5 id="signcolor"> <a href="messho_signup.html"> Sign up now </a></h5></button>
+        </div>
+    </div>
+    <div class="foot">
+        <div>
+            <h1>Shop Non-Stop on Meesho</h1>
+            <p id="paragr" >Trusted by more than 1 Crore Indians Cash on Delivery | Free Delivery</p>
+            <div class="appstore">
+                <div>
+                   <a href=" https://play.google.com/store/apps/details?id=com.meesho.supply"> <img  width="100%" id="and" src="https://meesho.com/_next/static/images/playstore-a7dfd2afcd42f96d491912cbec2d6fa2.png" alt=""></a>
+                </div>
+                <div>
+                    <a href="https://apps.apple.com/us/app/meesho/id1457958492"><img width="100%" id="ap" src="https://meesho.com/_next/static/images/appstore-a689c2ac38f3ed1ab7e7b39e98aaf15a.png" alt=""></div></a>
+                </div>
+        </div>
+        <div class="second" >
+            
+            <div>
+                <h5>Careers</h5>
+                <h5>Become a supplier</h5>
+                <h5>Meesho Tech Blog</h5>
+                <h5>Responsible Disclosure Policy</h5>
+            </div>
+            <div>
+                <h5>Terms & Conditions</h5>
+                <h5>Privacy Policy</h5>
+                <h5>Anti Phising Alert</h5>
+                <h5>Intellectual Property Policy</h5>
+            </div>
+        </div>
+        <div class="third">
+            <div>
+                <h3 id="contact">Contact Us</h3>
+                
+                <h5>query@meesho.com</h5>
+            </div>
+            <div>
+                <h3 id="contact">Reach out to us</h3>
+                <div class="social">
+                <a href="https://www.facebook.com/meeshosupply" class="facebook">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                
+                <a href="https://www.instagram.com/meeshoapp/" class="instagram">
+                   <i class="fa fa-instagram" aria-hidden="true"></i>
+                    
+                </a>
+                
+                <a href="https://www.youtube.com/channel/UCaGHIRKYUYlaI_ZAt2hxpjw" class="youtube">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a>
+                
+                <a href="https://www.linkedin.com/company/meesho" class="linkedin">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitter.com/meeshoapp" class="twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                    
+                </a>
+                
+            </div>
+            
+            </div>
+            
+            <div class="finaltext">
+                <p>If you have received a product that you did not order, please call us on 080-68878782. Please note no other support will be provided here.</p>
+            </div>
+        </div>
+        <div class="lasttext">
+            <h4>More About Meesho</h4>
+        </div>
+    </div>
+</body>
+</html>
